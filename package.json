@@ -1,7 +1,6 @@
 {
-  "name": "webhook-meta",
+  "name": "webhook-whatsapp",
   "version": "1.0.0",
-  "description": "Servidor para webhook do WhatsApp API",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
