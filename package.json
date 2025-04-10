@@ -1,11 +1,14 @@
 {
   "name": "webhook-whatsapp",
   "version": "1.0.0",
+  "description": "Servidor de Webhook para WhatsApp",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "axios": "^1.6.7"
   }
 }
+
