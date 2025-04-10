@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 // Variáveis
-const token_whatsapp = "EAAS1VZCpxlZBsBO5OAGkVUTONNtKDcptoXOmySEzQ5y7HiZA2gilZClZArTHP8Kwp3aBeN5JqZCP8FcW0Yr9JJvwSsfgBKA4RYyhS9uZCKQXNQBpsS6oMuQbAkOMPMgF7ELFJKURGa4v8SI0r9mA3wsdu8yIpJFRBCdrpTDr88CeZBrf9qJZAiU9MH00pjSEzxt0uibo0M8Qh7BTI1Okh0PSqqGNYuzW9";
+const token_whatsapp = "EAAS1VZCpxlZBsBO95H1rNWwuzqKYIoJ0sn2ijF90OZCdgtSMHSYlBl6lAEcXgHCXzjU4DIoY3pQdSXVwhDXajcBLcKaCaITIivBSi0UVPZBSrUy7IMzzM6rZBTSnPYSKx0nIzvGMcUZCqlfplPyKa70YfzqcxcSZAKK1btsR8V84s9Ucp43KdZAwsrxL1AZDZD";
 const phone_number_id = "580996415104401";
 
 // Verificação de Webhook (GET)
