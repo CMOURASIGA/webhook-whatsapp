@@ -1,25 +1,109 @@
 {
   "menu": {
+    "1": "Iniciando Operações",
+    "2": "Operações Básicas com Processos",
+    "3": "Operações de manutenção e acompanhamento de processos",
+    "4": "Outras Operações com Processos",
+    "5": "Operações básicas com documentos",
+    "6": "Outras operações com Documentos",
+    "7": "Blocos",
+    "8": "Restrição de Acesso",
+    "9": "Acompanhando e Recuperando Informações de Processos",
+    "10": "Usuário Externo"
+  },
+  "submenus": {
     "1": {
-      "nome": "Iniciando Operações",
-      "subtopicos": {
-        "1.1": {
-          "titulo": "Acesso ao Sistema",
-          "texto": "Para acessar o SEI, utilize seu login de rede e senha em um navegador homologado. Certifique-se que seu acesso está ativo.",
-          "imagem": "https://manuais.processoeletronico.gov.br/pt-br/latest/_images/acesso_sistema.png"
-        },
-        "1.2": {
-          "titulo": "Autenticação em dois fatores",
-          "texto": "O SEI permite autenticação em dois fatores para maior segurança. Para ativar, acesse seu perfil e siga o processo de configuração.",
-          "imagem": "https://manuais.processoeletronico.gov.br/pt-br/latest/_images/autenticacao_dois_fatores.png"
-        },
-        "1.3": {
-          "titulo": "Barra de Ferramentas",
-          "texto": "A Barra de Ferramentas oferece acesso rápido às principais ações do sistema, como iniciar processo, consultar documentos e tramitar processos.",
-          "imagem": "https://manuais.processoeletronico.gov.br/pt-br/latest/_images/barra_ferramentas.png"
-        },
-      }
+      "1.1": "Acesso ao Sistema",
+      "1.2": "Autenticação em dois fatores",
+      "1.3": "Barra de Ferramentas",
+      "1.4": "Menu Principal",
+      "1.5": "Tela de Controle de Processos",
+      "1.6": "Tela do Processo",
+      "1.7": "Tela do Documento"
+    },
+    "2": {
+      "2.1": "Iniciar Processo",
+      "2.2": "Receber Processos na Unidade",
+      "2.3": "Atribuir processos a um usuário",
+      "2.4": "Enviar processos para outra unidade",
+      "2.5": "Concluir Processos",
+      "2.6": "Reabrir processos"
+    },
+    "3": {
+      "3.1": "Retorno programado",
+      "3.2": "Controle de prazos",
+      "3.3": "Marcadores"
+    },
+    "4": {
+      "4.1": "Consulta de processos",
+      "4.2": "Gerar relatório de processos",
+      "4.3": "Solicitar processos físicos"
+    },
+    "5": {
+      "5.1": "Cadastrar Documento",
+      "5.2": "Editar Documento",
+      "5.3": "Assinar Documento",
+      "5.4": "Enviar Documento para Assinatura"
+    },
+    "6": {
+      "6.1": "Inserir Anexo",
+      "6.2": "Substituir Documento",
+      "6.3": "Cancelar Documento"
+    },
+    "7": {
+      "7.1": "Criar Bloco",
+      "7.2": "Adicionar documentos ao Bloco",
+      "7.3": "Encaminhar Bloco"
+    },
+    "8": {
+      "8.1": "Definir restrição de acesso",
+      "8.2": "Visualizar documentos restritos"
+    },
+    "9": {
+      "9.1": "Pesquisar Processos",
+      "9.2": "Acompanhar Processos"
+    },
+    "10": {
+      "10.1": "Cadastro de usuário externo",
+      "10.2": "Acesso do usuário externo"
     }
+  },
+  "respostas": {
+    "1.1": "Para acessar o SEI, utilize seu login de rede e senha no navegador homologado.",
+    "1.2": "A autenticação em dois fatores é configurada no primeiro acesso para segurança adicional.",
+    "1.3": "A Barra de Ferramentas permite acesso rápido às funções do SEI, como pesquisa e criação de processos.",
+    "1.4": "O Menu Principal organiza as funções básicas de cadastro, tramitação e consulta de processos.",
+    "1.5": "A Tela de Controle de Processos permite visualizar todos os processos sob sua responsabilidade.",
+    "1.6": "A Tela do Processo exibe os documentos vinculados a um processo específico.",
+    "1.7": "A Tela do Documento permite visualizar e editar documentos individualmente.",
+    "2.1": "Para iniciar um processo, clique em 'Cadastrar Processo' e preencha as informações obrigatórias.",
+    "2.2": "Para receber processos, utilize a função 'Receber' no controle de processos.",
+    "2.3": "Atribua processos utilizando o botão 'Atribuir' disponível nas listas de processos.",
+    "2.4": "Envie processos utilizando a função 'Enviar Processo' e selecione a unidade de destino.",
+    "2.5": "Conclua processos clicando em 'Concluir' após finalizadas todas as atividades necessárias.",
+    "2.6": "Reabra processos encerrados utilizando a função 'Reabrir' caso haja necessidade de ajustes.",
+    "3.1": "O Retorno Programado define datas para processos retornarem à sua unidade de origem.",
+    "3.2": "Controle de prazos permite visualizar processos com prazos definidos de resposta.",
+    "3.3": "Os marcadores ajudam na organização e filtro de processos por categorias específicas.",
+    "4.1": "A consulta de processos permite buscar documentos por número, interessado ou assunto.",
+    "4.2": "Relatórios de processos podem ser gerados para acompanhamento ou auditoria.",
+    "4.3": "Solicite processos físicos utilizando o formulário específico na área de tramitação.",
+    "5.1": "Para cadastrar documentos, utilize a opção 'Cadastrar Documento' dentro do processo.",
+    "5.2": "Para editar documentos, clique sobre o documento e selecione 'Editar'.",
+    "5.3": "Assine documentos através da função 'Assinar' disponível no cabeçalho do documento.",
+    "5.4": "Envie documentos para assinatura de outros usuários utilizando o fluxo interno do SEI.",
+    "6.1": "Insira anexos clicando em 'Incluir Anexo' dentro do processo desejado.",
+    "6.2": "Substitua documentos clicando em 'Substituir Documento' no processo ativo.",
+    "6.3": "Cancele documentos utilizando a função 'Cancelar' quando o documento não for mais necessário.",
+    "7.1": "Crie blocos agrupando documentos relacionados para facilitar a tramitação em conjunto.",
+    "7.2": "Adicione documentos ao bloco selecionando-os e clicando em 'Adicionar ao Bloco'.",
+    "7.3": "Encaminhe blocos para outras unidades através da opção 'Enviar Bloco'.",
+    "8.1": "Defina restrição de acesso para limitar a visualização dos documentos apenas a usuários autorizados.",
+    "8.2": "Usuários autorizados podem visualizar documentos restritos diretamente no SEI.",
+    "9.1": "Pesquise processos utilizando palavras-chave, números de protocolo ou interessados.",
+    "9.2": "Acompanhe processos monitorando alterações em tramitação ou documentos adicionados.",
+    "10.1": "Cadastre usuários externos para permitir que pessoas de fora da instituição acessem processos.",
+    "10.2": "Usuários externos acessam o sistema via login específico para consultas e assinaturas permitidas."
   }
 }
 
