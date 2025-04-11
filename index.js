@@ -1,17 +1,15 @@
 const express = require("express");
-const axios = require("axios"); // Importa o axios
+const axios = require("axios");
 const app = express();
+const fs = require("fs"); // Se simularmos com JSON local primeiro
+
+// Vamos carregar as perguntas e respostas
+let baseConhecimento = require("./baseConhecimento.json"); // Temporário até apontarmos para planilha
 
 app.use(express.json());
 
-// Variáveis
-const token_whatsapp = "EAAS1VZCpxlZBsBO95H1rNWwuzqKYIoJ0sn2ijF90OZCdgtSMHSYlBl6lAEcXgHCXzjU4DIoY3pQdSXVwhDXajcBLcKaCaITIivBSi0UVPZBSrUy7IMzzM6rZBTSnPYSKx0nIzvGMcUZCqlfplPyKa70YfzqcxcSZAKK1btsR8V84s9Ucp43KdZAwsrxL1AZDZD";
-const phone_number_id = "580996415104401";
-
-// Verificação de Webhook (GET)
 app.get("/", (req, res) => {
   const verify_token = "bot_assistant_ti";
-
   const mode = req.query["hub.mode"];
   const token = req.query["hub.verify_token"];
   const challenge = req.query["hub.challenge"];
@@ -26,7 +24,6 @@ app.get("/", (req, res) => {
   }
 });
 
-// Receber mensagens (POST)
 app.post("/", async (req, res) => {
   console.log("📩 Evento recebido:", JSON.stringify(req.body, null, 2));
 
@@ -36,36 +33,46 @@ app.post("/", async (req, res) => {
   const messageObject = value?.messages?.[0];
 
   if (messageObject) {
-    const from = messageObject.from; // Número do remetente
-    const msg_body = messageObject.text?.body; // Texto enviado
+    const from = messageObject.from;
+    const msg_body = messageObject.text?.body?.toLowerCase(); // Deixar minúsculo para comparação
 
     console.log(`👤 Mensagem recebida de ${from}: "${msg_body}"`);
 
-    // Enviar resposta automática
+    // Procurar resposta na base de conhecimento
+    const respostaEncontrada = baseConhecimento.find(item => 
+      msg_body.includes(item.palavra_chave.toLowerCase())
+    );
+
+    let respostaFinal = respostaEncontrada 
+      ? respostaEncontrada.resposta 
+      : "Desculpe, não entendi sua dúvida. Poderia reformular ou escolher uma opção do menu principal?";
+
+    // Enviar resposta
     try {
-      await axios({
-        method: "POST",
-        url: `https://graph.facebook.com/v19.0/${phone_number_id}/messages`,
-        headers: {
-          Authorization: `Bearer ${token_whatsapp}`,
-          "Content-Type": "application/json",
-        },
-        data: {
+      await axios.post(
+        `https://graph.facebook.com/v19.0/${value.metadata.phone_number_id}/messages`,
+        {
           messaging_product: "whatsapp",
           to: from,
-          text: { body: `Olá! 👋 Recebemos sua mensagem: "${msg_body}"` },
+          text: { body: respostaFinal }
         },
-      });
-      console.log("✅ Mensagem de resposta enviada com sucesso!");
+        {
+          headers: {
+            Authorization: `Bearer SEU_TOKEN_AQUI`,
+            "Content-Type": "application/json"
+          }
+        }
+      );
+
+      console.log("✅ Mensagem enviada!");
     } catch (error) {
-      console.error("❌ Erro ao enviar a resposta:", error.response?.data || error.message);
+      console.error("❌ Erro ao enviar resposta:", error.response?.data || error.message);
     }
   }
 
   res.sendStatus(200);
 });
 
-// Porta
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
