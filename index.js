@@ -60,7 +60,7 @@ app.post("/", async (req, res) => {
         },
         {
           headers: {
-            Authorization: `Bearer SEU_TOKEN_AQUI`,
+            Authorization: `Bearer EAAS1VZCpxlZBsBO95H1rNWwuzqKYIoJ0sn2ijF90OZCdgtSMHSYlBl6lAEcXgHCXzjU4DIoY3pQdSXVwhDXajcBLcKaCaITIivBSi0UVPZBSrUy7IMzzM6rZBTSnPYSKx0nIzvGMcUZCqlfplPyKa70YfzqcxcSZAKK1btsR8V84s9Ucp43KdZAwsrxL1AZDZD`,
             "Content-Type": "application/json"
           }
         }
@@ -78,6 +78,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
-
 
 
