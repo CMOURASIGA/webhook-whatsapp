@@ -1,10 +1,10 @@
+
 const express = require("express");
 const axios = require("axios");
 const app = express();
-const fs = require("fs"); // Se simularmos com JSON local primeiro
+const fs = require("fs");
 
-// Vamos carregar as perguntas e respostas
-let baseConhecimento = require("./baseConhecimento.json"); // Temporário até apontarmos para planilha
+const baseConhecimento = require("./baseConhecimento.json");
 
 app.use(express.json());
 
@@ -34,20 +34,22 @@ app.post("/", async (req, res) => {
 
   if (messageObject) {
     const from = messageObject.from;
-    const msg_body = messageObject.text?.body?.toLowerCase(); // Deixar minúsculo para comparação
+    const msg_body = messageObject.text?.body?.toLowerCase();
 
     console.log(`👤 Mensagem recebida de ${from}: "${msg_body}"`);
 
-    // Procurar resposta na base de conhecimento
-    const respostaEncontrada = baseConhecimento.find(item => 
-      msg_body.includes(item.palavra_chave.toLowerCase())
-    );
+    if (msg_body.includes("menu") || msg_body.includes("voltar")) {
+      respostaFinal = "🔹 Menu Principal 🔹\n1️⃣ Acesso ao Sistema\n2️⃣ Cadastro de Processo\n3️⃣ Assinatura e Trâmite\nDigite sua dúvida!";
+    } else {
+      const respostaEncontrada = baseConhecimento.find(item =>
+        msg_body.includes(item.palavra_chave.toLowerCase())
+      );
 
-    let respostaFinal = respostaEncontrada 
-      ? respostaEncontrada.resposta 
-      : "Desculpe, não entendi sua dúvida. Poderia reformular ou escolher uma opção do menu principal?";
+      respostaFinal = respostaEncontrada
+        ? respostaEncontrada.resposta
+        : "❓ Não consegui entender sua dúvida. Digite novamente ou escreva 'menu' para ver as opções!";
+    }
 
-    // Enviar resposta
     try {
       await axios.post(
         `https://graph.facebook.com/v19.0/${value.metadata.phone_number_id}/messages`,
@@ -63,7 +65,6 @@ app.post("/", async (req, res) => {
           }
         }
       );
-
       console.log("✅ Mensagem enviada!");
     } catch (error) {
       console.error("❌ Erro ao enviar resposta:", error.response?.data || error.message);
@@ -77,5 +78,6 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
+
 
 
