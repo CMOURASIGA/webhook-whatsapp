@@ -1,27 +1,26 @@
-[
-  {
-    "palavra_chave": "acesso sei",
-    "resposta": "Para acessar o SEI utilize seu login de rede e senha no navegador homologado.",
-    "categoria": "Primeiros Passos"
-  },
-  {
-    "palavra_chave": "cadastrar processo",
-    "resposta": "Para cadastrar um processo no SEI, clique em 'Cadastrar Processo' e preencha os campos obrigatórios.",
-    "categoria": "Cadastro de Processo"
-  },
-  {
-    "palavra_chave": "assinar documento",
-    "resposta": "Para assinar documentos, abra o processo, selecione o documento e clique em 'Assinar Documento'.",
-    "categoria": "Assinatura"
-  },
-  {
-    "palavra_chave": "trâmite processo",
-    "resposta": "Para tramitar um processo no SEI, clique em 'Enviar Processo' e selecione o setor de destino.",
-    "categoria": "Trâmite de Documentos"
-  },
-  {
-    "palavra_chave": "pesquisar processo",
-    "resposta": "Para pesquisar processos no SEI, utilize o campo de busca na página inicial.",
-    "categoria": "Pesquisa"
+{
+  "menu": {
+    "1": {
+      "nome": "Iniciando Operações",
+      "subtopicos": {
+        "1.1": {
+          "titulo": "Acesso ao Sistema",
+          "texto": "Para acessar o SEI, utilize seu login de rede e senha em um navegador homologado. Certifique-se que seu acesso está ativo.",
+          "imagem": "https://manuais.processoeletronico.gov.br/pt-br/latest/_images/acesso_sistema.png"
+        },
+        "1.2": {
+          "titulo": "Autenticação em dois fatores",
+          "texto": "O SEI permite autenticação em dois fatores para maior segurança. Para ativar, acesse seu perfil e siga o processo de configuração.",
+          "imagem": "https://manuais.processoeletronico.gov.br/pt-br/latest/_images/autenticacao_dois_fatores.png"
+        },
+        "1.3": {
+          "titulo": "Barra de Ferramentas",
+          "texto": "A Barra de Ferramentas oferece acesso rápido às principais ações do sistema, como iniciar processo, consultar documentos e tramitar processos.",
+          "imagem": "https://manuais.processoeletronico.gov.br/pt-br/latest/_images/barra_ferramentas.png"
+        },
+        ...
+      }
+    }
   }
-]
+}
+
