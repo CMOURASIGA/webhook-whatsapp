@@ -41,5 +41,5 @@ Este projeto foi desenvolvido para ser facilmente expansível:
 
 ---
 
-### Desenvolvido por: [Seu Nome ou Nome da Equipe] ✨
+### Desenvolvido por: CHRISTIAN MOURA ✨
 
