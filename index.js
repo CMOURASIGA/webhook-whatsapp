@@ -8,8 +8,8 @@ const baseConhecimento = require("./baseConhecimento.json");
 app.use(express.json());
 
 const token = "EAAS1VZCpxlZBsBO95H1rNWwuzqKYIoJ0sn2ijF90OZCdgtSMHSYlBl6lAEcXgHCXzjU4DIoY3pQdSXVwhDXajcBLcKaCaITIivBSi0UVPZBSrUy7IMzzM6rZBTSnPYSKx0nIzvGMcUZCqlfplPyKa70YfzqcxcSZAKK1btsR8V84s9Ucp43KdZAwsrxL1AZDZD"; // substitua pelo seu token
-const phone_number_id = "580996415104401"; // ID do número de telefone
-const makeWebhookURL = "https://hook.make.com/SEU_WEBHOOK_AQUI"; // substitua pelo webhook do Make
+const phone_number_id = "572870979253681"; // ID do número de telefone
+const makeWebhookURL = "https://hook.us2.make.com/la3lng90eob57s6gg6yg12s8rlmqy3eh"; // substitua pelo webhook do Make
 
 function montarMenuPrincipal() {
   let texto = "✨ *Menu Principal* ✨\n\n";
